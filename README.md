@@ -16,6 +16,12 @@ Link to Dataset: [click here](https://www.kaggle.com/datasets/waqi786/remote-wor
 
 ## Task 1. Data Familiarization: Understand the structure, variables, and content of the dataset
 
+**Dataset Overview:**
+
+The dataset used in this project is sourced from Kaggle. It's a synthetically generated dataset designed to simulate workplace trends related to remote work and mental health. The data does not represent real-world information and is intended solely for educational purposes, exploratory analysis. Consists of a single sheet (non-relational), containing all relevant data in one table.
+
+**Columns Description:**
+
 ## Task 2. Data Cleaning: Preprocess the data by handling missing values, outliers, and inconsistencies to ensure quality for analysis
 
 ## Task 3. Dashboard Creation: Build interactive dashboards using Power BI to visualize key trends and patterns in the data
