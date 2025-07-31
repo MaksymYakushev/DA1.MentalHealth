@@ -11,12 +11,10 @@ Link to Dataset: [click here](https://www.kaggle.com/datasets/waqi786/remote-wor
 ## Table of Contents
 - [Task 1. Data Familiarization: Understand the structure, variables, and content of the dataset](#task-1-data-familiarization-understand-the-structure-variables-and-content-of-the-dataset)
 
+## Task 1. Data Familiarization: Understand the structure, variables, and content of the dataset
 
+## Task 2. Data Cleaning: Preprocess the data by handling missing values, outliers, and inconsistencies to ensure quality for analysis
 
-##Task 1. Data Familiarization: Understand the structure, variables, and content of the dataset
+## Task 3. Dashboard Creation: Build interactive dashboards using Power BI to visualize key trends and patterns in the data
 
-##Task 2. Data Cleaning: Preprocess the data by handling missing values, outliers, and inconsistencies to ensure quality for analysis
-
-##Task 3. Dashboard Creation: Build interactive dashboards using Power BI to visualize key trends and patterns in the data
-
-##Task 4. Presentation: Summarize findings and insights in a clear and concise presentation to communicate results effectively
+## Task 4. Presentation: Summarize findings and insights in a clear and concise presentation to communicate results effectively
