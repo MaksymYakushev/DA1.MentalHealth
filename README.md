@@ -45,9 +45,61 @@ The dataset used in this project is sourced from Kaggle. It's a synthetically ge
 | **sleep_quality** | text | Quality of sleep (Average, Good, Poor) |
 | **Region** | text | region (Africa, Asia, South America, North America, Europe, Oceania) |
 
-Once I familiarized myself with the dataset, let's move on to the next stage.
+  Once I familiarized myself with the dataset, let's move on to the next stage.
 
 ## Task 2. Data Cleaning: Preprocess the data by handling missing values, outliers, and inconsistencies to ensure quality for analysis
+
+Link to Cleaning script: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/Cleaning.sql)
+
+Let's start with Dataset overview!
+
+First of all I have to check if everything is working and displaying correctly.
+
+```sql
+SELECT * 
+FROM health
+LIMIT 5;
+```
+
+Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/queries_sql/view_first_5_rows.csv)
+
+Next, I have to do a sanity check. For example, making sure that an employee isn't 1 year old or 157 years old and so on. Let's consider the following columns: **age**, **years\_of\_experience**, **hours\_worked\_per\_week**, and **number\_of\_virtual\_meetings**.
+
+```sql
+SELECT
+  MIN(age) AS min_age
+  , MAX(age) AS max_age
+  , MIN(years_of_experience) AS min_years_of_experience
+  , MAX(years_of_experience) AS max_years_of_experience
+  , MIN(hours_worked_per_week) AS min_hours_worked_per_week
+  , MAX(hours_worked_per_week) AS max_hours_worked_per_week
+  , MIN(number_of_virtual_meetings) AS min_number_of_virtual_meetings
+  , MAX(number_of_virtual_meetings) AS max_number_of_virtual_meetings
+FROM health;
+```
+
+Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/queries_sql/sanity_check.csv)
+
+| min_age | max_age | min_years_of_experience |	max_years_of_experience |	min_hours_worked_per_week |	max_hours_worked_per_week	| min_number_of_virtual_meetings | max_number_of_virtual_meetings |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 22 | 60 | 1 | 35 | 20 | 60 | 0 | 15 |
+
+If I need to see what values exist in the rows I can use the following query
+
+```sql
+SELECT
+  DISTINCT gender
+FROM health;
+```
+
+Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/queries_sql/gender_column.csv)
+
+| gender |
+| --- |
+| Female |
+| Male |
+| Non-binary |
+| Prefer not to say |
 
 ## Task 3. Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data
 
