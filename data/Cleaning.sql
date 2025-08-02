@@ -219,5 +219,8 @@ SELECT
 FROM health
 WHERE
 	work_life_balance_rating > 5
+	OR work_life_balance_rating < 1
 	OR social_isolation_rating > 5
-	OR company_support_for_remote_work > 5;
+	OR social_isolation_rating < 1
+	OR company_support_for_remote_work > 5
+	OR company_support_for_remote_work < 1;
