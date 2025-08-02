@@ -208,6 +208,16 @@ SELECT
 FROM health;
 ```
 
+Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/queries_sql/%20check_nulls.csv)
+
+Also this dataset contains ratings and I have to check the columns. According to the criteria ratings can be from 1 to 5. So, let's run the following query
+
+```sql
+
+```
+
+
+
 
 ## Task 3. Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data
 
