@@ -119,7 +119,7 @@ FROM stress_level_values
 UNION ALL
 
 SELECT 
-	'Mental Health Resources' AS column_name
+	'Mental Health Condition' AS column_name
 	, mental_health_condition AS value 
 FROM mental_health_condition_values
 
