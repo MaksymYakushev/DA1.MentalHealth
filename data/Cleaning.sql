@@ -2,61 +2,60 @@
 -- View first 10 rows
 SELECT * 
 FROM health
-LIMIT 10;
+LIMIT 5;
 
 -- Sanity check
 SELECT
-	MIN(age) AS min_age
-	, MAX(age) AS max_age
-	, MIN(years_of_experience) AS min_years_of_experience
-	, MAX(years_of_experience) AS max_years_of_experience
-	, MIN(hours_worked_per_week) AS min_hours_worked_per_week
-	, MAX(hours_worked_per_week) AS max_hours_worked_per_week
-	, MIN(number_of_virtual_meetings) AS min_number_of_virtual_meetings
-	, MAX(number_of_virtual_meetings) AS max_number_of_virtual_meetings
+    MIN(age) AS min_age
+    , MAX(age) AS max_age
+    , MIN(years_of_experience) AS min_years_of_experience
+    , MAX(years_of_experience) AS max_years_of_experience 
+    , MIN(hours_worked_per_week) AS min_hours_worked_per_week
+    , MAX(hours_worked_per_week) AS max_hours_worked_per_week
+    , MIN(number_of_virtual_meetings) AS min_number_of_virtual_meetings
+    , MAX(number_of_virtual_meetings) AS max_number_of_virtual_meetings
 FROM health;
 
 -- Gender column overview
 SELECT
-	 DISTINCT gender
-FROM 
-	health;
+    DISTINCT gender
+FROM health;
 
 -- Resource-efficient queries for column overview (gender, job_role, industry, work_location, ...)
 WITH gender_values AS (
-    SELECT 
-		DISTINCT gender
-    FROM health
+     SELECT
+	DISTINCT gender
+     FROM health
 ),
 job_role_values AS (
-    SELECT 
-		DISTINCT job_role
-    FROM health
+     SELECT
+	DISTINCT job_role
+     FROM health
 ),
 industry_values AS (
-    SELECT 
-		DISTINCT industry
-    FROM health
+     SELECT
+	DISTINCT industry
+     FROM health
 ),
 work_location_values AS (
-    SELECT 
-		DISTINCT work_location
-    FROM health
+     SELECT
+	DISTINCT work_location
+     FROM health
 ),
 stress_level_values AS (
-	SELECT 
-		DISTINCT stress_level
-	FROM health
+      SELECT
+	DISTINCT stress_level
+      FROM health
 ),
 mental_health_condition_values AS (
-	SELECT 
-		DISTINCT mental_health_condition
-	FROM health 
+       SELECT 
+	  DISTINCT mental_health_condition
+       FROM health 
 ),
 access_to_mental_health_resources_values AS (
-	SELECT 
-		DISTINCT access_to_mental_health_resources
-	FROM health
+       SELECT
+	  DISTINCT access_to_mental_health_resources
+       FROM health
 ),
 productivity_change_values AS (
 	SELECT 
@@ -198,7 +197,7 @@ SELECT
     , COUNT(*) FILTER (WHERE hours_worked_per_week IS NULL) AS hours_worked_per_week_NULL
     , COUNT(*) FILTER (WHERE number_of_virtual_meetings IS NULL) AS number_of_virtual_meetings_NULL
     , COUNT(*) FILTER (WHERE work_life_balance_rating IS NULL) AS work_life_balance_rating_NULL
-	, COUNT(*) FILTER (WHERE stress_level IS NULL) AS stress_level_NULL
+    , COUNT(*) FILTER (WHERE stress_level IS NULL) AS stress_level_NULL
 	, COUNT(*) FILTER (WHERE mental_health_condition IS NULL) AS mental_health_condition_NULL
 	, COUNT(*) FILTER (WHERE access_to_mental_health_resources IS NULL) AS access_to_mental_health_resources_NULL
 	, COUNT(*) FILTER (WHERE productivity_change IS NULL) AS productivity_change_NULL
