@@ -84,7 +84,7 @@ Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/mai
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 22 | 60 | 1 | 35 | 20 | 60 | 0 | 15 |
 
-If I need to see what values exist in the rows I can use the following query
+If I need to see what values exist in the columns I can use the following query
 
 ```sql
 SELECT
@@ -100,6 +100,67 @@ Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/mai
 | Male |
 | Non-binary |
 | Prefer not to say |
+
+But if there is a need to view the values for all columns I can use resource-efficient queries for column overview
+
+```sql
+WITH gender_values AS (
+  SELECT
+    DISTINCT gender
+  FROM health
+),
+job_role_values AS (
+  SELECT
+    DISTINCT job_role
+  FROM health
+),
+industry_values AS (
+  SELECT
+    DISTINCT industry
+  FROM health
+),
+
+...
+
+SELECT
+  'Gender' AS column_name
+  , gender AS value
+FROM gender_values
+
+UNION ALL
+
+SELECT
+  'Job Role' AS column_name
+  , job_role AS value 
+FROM job_role_values
+
+UNION ALL
+
+SELECT
+  'Industry' AS column_name
+  , industry AS value 
+FROM industry_values
+
+...
+```
+
+Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/queries_sql/resource_efficient_queries.csv)
+
+The next step is checking for duplicates. We can use this fast method
+
+```sql
+SELECT
+  COUNT(employee_id) - COUNT(DISTINCT employee_id) AS count_duplicates
+FROM health;
+```
+
+Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/queries_sql/duplicates_check_fast.csv)
+
+| count_duplicates |
+| --- |
+| 0 |
+
+
 
 ## Task 3. Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data
 
