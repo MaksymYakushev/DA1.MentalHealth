@@ -233,6 +233,11 @@ Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/mai
 | --- | --- | --- |
 | 0 | 0 | 0 |
 
+**At this stage:**
+- The data has passed a basic quality check;
+- It has been found to be clean, consistent, and free of anomalies or duplicates;
+- I can proceed to the next step.
+
 ## Task 3. Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data
 
 ## Task 4. Presentation: Summarize findings and insights in a clear and concise presentation to communicate results effectively
