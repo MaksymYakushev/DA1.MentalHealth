@@ -213,11 +213,25 @@ Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/mai
 Also this dataset contains ratings and I have to check the columns. According to the criteria ratings can be from 1 to 5. So, let's run the following query
 
 ```sql
-
+SELECT
+  COUNT(work_life_balance_rating) AS count_wlbr_greather_then_five
+  , COUNT(social_isolation_rating) AS count_sir_greather_then_five
+  , COUNT(company_support_for_remote_work) AS count_csfrw_greather_then_five
+FROM health
+WHERE
+  work_life_balance_rating > 5
+  OR work_life_balance_rating < 1
+  OR social_isolation_rating > 5
+  OR social_isolation_rating < 1
+  OR company_support_for_remote_work > 5
+  OR company_support_for_remote_work < 1;
 ```
 
+Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/queries_sql/check_rating_columns.csv)
 
-
+| count_wlbr_greather_then_five | count_sir_greather_then_five | count_csfrw_greather_then_five |
+| --- | --- | --- |
+| 0 | 0 | 0 |
 
 ## Task 3. Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data
 
