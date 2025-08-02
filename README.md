@@ -160,6 +160,53 @@ Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/mai
 | --- |
 | 0 |
 
+But for a more detailed overview I can execute the following query
+
+```sql
+SELECT
+  employee_id
+  , COUNT(*)
+FROM health
+GROUP BY
+  employee_id
+HAVING
+  COUNT(*) > 1
+ORDER BY
+  COUNT(*) DESC;
+```
+
+Result:
+
+| employee_id | count |
+| --- | --- |
+| | |
+
+The next step is checking for NULLs values. Let's run the following query
+
+```sql
+SELECT
+  COUNT(*) FILTER (WHERE employee_id IS NULL) AS employee_id_NULL
+  , COUNT(*) FILTER (WHERE age IS NULL) AS age_NULL
+  , COUNT(*) FILTER (WHERE gender IS NULL) AS gender_NULL
+  , COUNT(*) FILTER (WHERE job_role IS NULL) AS job_role_NULL
+  , COUNT(*) FILTER (WHERE industry IS NULL) AS industry_NULL
+  , COUNT(*) FILTER (WHERE years_of_experience IS NULL) AS years_of_experience_NULL
+  , COUNT(*) FILTER (WHERE work_location IS NULL) AS work_location_NULL
+  , COUNT(*) FILTER (WHERE hours_worked_per_week IS NULL) AS hours_worked_per_week_NULL
+  , COUNT(*) FILTER (WHERE number_of_virtual_meetings IS NULL) AS number_of_virtual_meetings_NULL
+  , COUNT(*) FILTER (WHERE work_life_balance_rating IS NULL) AS work_life_balance_rating_NULL
+  , COUNT(*) FILTER (WHERE stress_level IS NULL) AS stress_level_NULL
+  , COUNT(*) FILTER (WHERE mental_health_condition IS NULL) AS mental_health_condition_NULL
+  , COUNT(*) FILTER (WHERE access_to_mental_health_resources IS NULL) AS access_to_mental_health_resources_NULL
+  , COUNT(*) FILTER (WHERE productivity_change IS NULL) AS productivity_change_NULL
+  , COUNT(*) FILTER (WHERE social_isolation_rating IS NULL) AS social_isolation_rating_NULL
+  , COUNT(*) FILTER (WHERE satisfaction_with_remote_work IS NULL) AS satisfaction_with_remote_work_NULL
+  , COUNT(*) FILTER (WHERE company_support_for_remote_work IS NULL) AS company_support_for_remote_work_NULL
+  , COUNT(*) FILTER (WHERE physical_activity IS NULL) AS physical_activity_NULL
+  , COUNT(*) FILTER (WHERE sleep_quality IS NULL) AS sleep_quality_NULL
+  , COUNT(*) FILTER (WHERE region IS NULL) AS region_NULL
+FROM health;
+```
 
 
 ## Task 3. Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data
