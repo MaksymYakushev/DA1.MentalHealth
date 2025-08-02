@@ -22,45 +22,30 @@ The dataset used in this project is sourced from Kaggle. It's a synthetically ge
 
 **Columns Description:**
 
-**Employee_ID** - Unique identifier for each employee
+| **Column** | **Data type** | **Description** |
+|---|---|---|
+| **employee_id** | text | Unique identifier for each employee | 
+| **age** | integer | Age of the employee (min: 22; max: 60) |
+| **gender** | text | Gender of employee (Male, Female, Non-binary, Prefer not to say) |
+| **job_role** | text | Assigned job role (Software Engineer, Project Manager, Sales, HR, Data Scientist, Designer, Marketing) |
+| **industry** | text | Category of industry (Finance, Retail, Consulting, Manufacturing, Healthcare, IT, Education) |
+| **years_of_experience** | integer | Employee years of experience (min: 1; max: 35) |
+| **work_location** | text |Work setting (Hybrid, Onsite, Remote) |
+| **hour_worked_per_week** | integer | Employee hours worked per week (min: 20; max: 60) |
+| **number_of_virtual_meetings** | integer | Number of virtual meetings (min: 0; max: 15) |
+| **work_life_balance_rating** | integer | Rating of work-life balance (1 to 5 rating scale, where 1 represents - bad and 5 represents - good) |
+| **stress_level** | text | Level of stress (High, Medium, Low) |
+| **mental_health_condition** | text | Condition of mental health (Depression, Burnout, Anxiety, None) |
+| **access_to_mental_health_resources** | text | Does the employee have access to mental health resources? (Yes, No) |
+| **productivity_change** | text | Is there Productivity Change? (No Change, Increase, Decrease) |
+| **social_isolation_rating** | integer | Rating of social isolation (1 to 5 rating scale, where 1 represents - no social isolation and 5 represents - social isolation) |
+| **satisfaction_with_remote_work** | text | Satisfaction with remote work (Unsatisfied, Neutral, Satisfied) |
+| **company_support_for_remote_work** | integer | Rating of company support of remote work (1 to 5 rating scale, where 1 represents - bad and 5 represents - good) |
+| **physical_activity** | text | How often does the employee have physical activity? (Daily, Weekly, None) |
+| **sleep_quality** | text | Quality of sleep (Average, Good, Poor) |
+| **Region** | text | region (Africa, Asia, South America, North America, Europe, Oceania) |
 
-**Age** - Age of the employee (min: 22; max: 60)
-
-**Gender**- Gender of employee (Male, Female, Non-binary, Prefer not to say)
-
-**Job_Role** - Assigned job role (Software Engineer, Project Manager, Sales, HR, Data Scientist, Designer, Marketing)
-
-**Industry** - Category of industry (Finance, Retail, Consulting, Manufacturing, Healthcare, IT, Education)
-
-**Years_of_Experience** - Employee years of experience (min: 1; max: 35)
-
-**Work_Location** - Work setting (Hybrid, Onsite, Remote)
-
-**Hour_Worked_per_Week** - Employee hours worked per week (min: 20; max: 60)
-
-**Number_of_Virtual_Meetings** - Number of virtual meetings (min: 0; max: 15)
-
-**Work_Life_Balance_Rating** - Rating of work-life balance (1 to 5 rating scale, where 1 represents - bad and 5 represents - good)
-
-**Stress_Level** - Level of stress (High, Medium, Low)
-
-**Mental_Health_Condition** - Condition of mental health (Depression, Burnout, Anxiety, None)
-
-**Access_to_Mental_Health_Resources** - Does the employee have access to mental health resources? (Yes, No)
-
-**Productivity_Change** - Is there Productivity Change? (No Change, Increase, Decrease)
-
-**Social_Isolation_Rating** - Rating of social isolation (1 to 5 rating scale, where 1 represents - no social isolation and 5 represents - social isolation)
-
-**Satisfaction_with_Remote_Work** - Satisfaction with remote work (Unsatisfied, Neutral, Satisfied)
-
-**Company_Support_for_Remote_Work**- Rating of company support of remote work (1 to 5 rating scale, where 1 represents - bad and 5 represents - good)
-
-**Physical_Activity** - How often does the employee have physical activity? (Daily, Weekly, None)
-
-**Sleep_Quality** - Quality of sleep (Average, Good, Poor)
-
-**Region** - Region (Africa, Asia, South America, North America, Europe, Oceania)
+Once I familiarized myself with the dataset, let's move on to the next stage.
 
 ## Task 2. Data Cleaning: Preprocess the data by handling missing values, outliers, and inconsistencies to ensure quality for analysis
 
