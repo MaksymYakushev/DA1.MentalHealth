@@ -2,11 +2,13 @@
 
 Welcome! 
 
-TThis project is an initial study of the impact of remote work on mental health. Using a synthetic dataset from Kaggle, I created an interactive dashboard that demonstrates descriptive analytics - answering questions about what happened in the past. The project serves as a learning exercise to reinforce data analysis skills, including data cleaning, visualization, and presentation.
+This project is an initial study of the impact of remote work on mental health. Using a synthetic dataset from Kaggle, I created an interactive dashboard that demonstrates descriptive analytics - answering questions about what happened in the past. The project serves as a learning exercise to reinforce data analysis skills, including data cleaning, visualization, and presentation.
 
 <img src="https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/Mental-Health.jpg" width="490" height="240">   
 
 Link to Dataset: [click here](https://www.kaggle.com/datasets/waqi786/remote-work-and-mental-health)
+
+Reporting: **IN PROGRESS** ⏳
 
 ## Table of Contents
 - [Project Goals](#project-goals)
