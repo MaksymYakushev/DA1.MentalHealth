@@ -2,17 +2,28 @@
 
 Welcome! 
 
-This project utilizes a dataset from Kaggle titled Remote Work and Mental Health. The primary objective is to explore, clean, and analyze the data to gain insights into the relationship between remote work and mental health. The project serves as a learning exercise to reinforce data analysis skills, including data cleaning, visualization, and presentation.
+TThis project is an initial study of the impact of remote work on mental health. Using a synthetic dataset from Kaggle, I created an interactive dashboard that demonstrates descriptive analytics - answering questions about what happened in the past. The project serves as a learning exercise to reinforce data analysis skills, including data cleaning, visualization, and presentation.
 
 <img src="https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/Mental-Health.jpg" width="490" height="240">   
 
 Link to Dataset: [click here](https://www.kaggle.com/datasets/waqi786/remote-work-and-mental-health)
 
 ## Table of Contents
+- [Project Goals](#project-goals)
 - [Task 1. Data Familiarization: Understand the structure, variables, and content of the dataset](#task-1-data-familiarization-understand-the-structure-variables-and-content-of-the-dataset)
 - [Task 2. Data Cleaning: Preprocess the data by handling missing values, outliers, and inconsistencies to ensure quality for analysis](#task-2-data-cleaning-preprocess-the-data-by-handling-missing-values-outliers-and-inconsistencies-to-ensure-quality-for-analysis)
 - [Task 3. Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data](#task-3-dashboard-creation-build-interactive-dashboards-using-tableau-to-visualize-key-trends-and-patterns-in-the-data)
 - [Task 4. Presentation: Summarize findings and insights in a clear and concise presentation to communicate results effectively](#task-4-presentation-summarize-findings-and-insights-in-a-clear-and-concise-presentation-to-communicate-results-effectively)
+
+**Project Goals**
+
+1. Get familiar with the data structure and perform preliminary data cleaning
+
+2. Conduct basic descriptive data analysis to identify key trends and patterns
+
+3. Build an interactive dashboard in Tableau to visualize key metrics
+
+4. Develop skills in data handling, visualization, and results presentation
 
 ## Task 1. Data Familiarization: Understand the structure, variables, and content of the dataset
 
