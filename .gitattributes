@@ -1,2 +1,4 @@
 *.sql linguist-language=SQL
 *.sql linguist-detectable=true
+
+*.twb linguist-language=XML
