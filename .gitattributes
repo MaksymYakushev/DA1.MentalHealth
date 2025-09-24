@@ -2,3 +2,4 @@
 *.sql linguist-detectable=true
 
 *.twb linguist-language=XML
+*.twb linguist-detectable=true
