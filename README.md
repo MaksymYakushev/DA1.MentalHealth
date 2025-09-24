@@ -1,14 +1,28 @@
 # DA 1. Mental Health
 
-Welcome! 
+<img src="https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/Mental-Health.jpg" width="490" height="240">  
 
-This project is an initial study of the impact of remote work on mental health. Using a synthetic dataset from Kaggle, I created an interactive dashboard that demonstrates descriptive analytics - answering questions about what happened in the past. The project serves as a learning exercise to reinforce data analysis skills, including data cleaning, visualization, and presentation.
+## Introduction
 
-<img src="https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/Mental-Health.jpg" width="490" height="240">   
+Welcome! This project is a personal initiative aimed at improving my data analysis skills and expanding my knowledge. Through hands-on work with datasets, data cleaning, visualization, and analysis, I aim to strengthen my abilities and gain practical experience in solving real-world problems.
 
-Link to Dataset: [click here](https://www.kaggle.com/datasets/waqi786/remote-work-and-mental-health)
+## About the project
 
-Reporting: **IN PROGRESS** ⏳
+In this project I examine the impact of remote work on mental health using a synthetic Kaggle dataset. An interactive dashboard demonstrates descriptive analytics, providing clear insights into past trends and patterns.
+
+---
+
+🔗 **Usefull links**:
+
+.csv dataset: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/Impact_of_Remote_Work_on_Mental_Health.csv)
+
+.sql cleaning: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/Cleaning.sql)
+
+.twbx project: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/DA%201.%20Mental%20Health.twbx)
+
+public tableau project: [click here](https://public.tableau.com/app/profile/maksym.yakushev/viz/DA1_MentalHealth/Dashboard)
+
+---
 
 ## Table of Contents
 - [Project Goals](#project-goals)
@@ -19,16 +33,11 @@ Reporting: **IN PROGRESS** ⏳
 - [Task 5. Presentation: Summarize findings and insights in a clear and concise presentation to communicate results effectively](#task-5-presentation-summarize-findings-and-insights-in-a-clear-and-concise-presentation-to-communicate-results-effectively)
 - [Conclusion](conclusion)
 
-## Project Goals
-
-1. Get familiar with the data structure and perform preliminary data cleaning - **DONE** ✅
-2. Conduct basic descriptive data analysis to identify key trends and patterns - **DONE** ✅
-3. Build an interactive dashboard in Tableau to visualize key metrics - **DONE** ✅
-4. Develop skills in data handling, visualization, and results presentation - **DONE** ✅
-
 ## Task 1. Data Familiarization: Understand the structure, variables, and content of the dataset
 
 **Dataset Overview:**
+
+Link to Dataset: [click here](https://www.kaggle.com/datasets/waqi786/remote-work-and-mental-health)
 
 The dataset used in this project is sourced from Kaggle. It's a synthetically generated dataset designed to simulate workplace trends related to remote work and mental health. The data does not represent real-world information and is intended solely for educational purposes, exploratory analysis. Consists of a single sheet (non-relational), containing all relevant data in one table.
 
