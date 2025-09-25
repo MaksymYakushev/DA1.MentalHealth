@@ -10,6 +10,13 @@ Welcome! This project is a personal initiative aimed at improving my data analys
 
 In this project I examine the impact of remote work on mental health using a synthetic Kaggle dataset. An interactive dashboard demonstrates descriptive analytics, providing clear insights into past trends and patterns.
 
+🎯 Main goals: 
+- Improve practical data analysis skills through hands-on practice
+- Learn and apply techniques for data cleaning and preprocessing
+- Develop effective data visualization and dashboard design
+- Explore descriptive analytics to identify trends and patterns
+- Strengthen ability to present insights clearly and professionally
+
 ---
 
 🔗 **Usefull links**:
@@ -25,23 +32,22 @@ public tableau project: [click here](https://public.tableau.com/app/profile/maks
 ---
 
 ## Table of Contents
-- [Project Goals](#project-goals)
-- [Task 1. Data Familiarization: Understand the structure, variables, and content of the dataset](#task-1-data-familiarization-understand-the-structure-variables-and-content-of-the-dataset)
-- [Task 2. Data Cleaning: Preprocess the data by handling missing values, outliers, and inconsistencies to ensure quality for analysis](#task-2-data-cleaning-preprocess-the-data-by-handling-missing-values-outliers-and-inconsistencies-to-ensure-quality-for-analysis)
-- [Task 3. Identifying key trends and patterns](#task-3-identifying-key-trends-and-patterns)
-- [Task 4. Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data](#task-4-dashboard-creation-build-interactive-dashboards-using-tableau-to-visualize-key-trends-and-patterns-in-the-data)
-- [Task 5. Presentation: Summarize findings and insights in a clear and concise presentation to communicate results effectively](#task-5-presentation-summarize-findings-and-insights-in-a-clear-and-concise-presentation-to-communicate-results-effectively)
+- [Data Familiarization: Understand the structure, variables, and content of the dataset](#data-familiarization-understand-the-structure-variables-and-content-of-the-dataset)
+- [Data Cleaning: Preprocess the data by handling missing values, outliers, and inconsistencies to ensure quality for analysis](#data-cleaning-preprocess-the-data-by-handling-missing-values-outliers-and-inconsistencies-to-ensure-quality-for-analysis)
+- [Identifying key trends and patterns](#identifying-key-trends-and-patterns)
+- [Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data](#dashboard-creation-build-interactive-dashboards-using-tableau-to-visualize-key-trends-and-patterns-in-the-data)
+- [Presentation: Summarize findings and insights in a clear and concise presentation to communicate results effectively](#presentation-summarize-findings-and-insights-in-a-clear-and-concise-presentation-to-communicate-results-effectively)
 - [Conclusion](conclusion)
 
-## Task 1. Data Familiarization: Understand the structure, variables, and content of the dataset
+## Data Familiarization: Understand the structure, variables and content of the dataset
 
 **Dataset Overview:**
 
-Link to Dataset: [click here](https://www.kaggle.com/datasets/waqi786/remote-work-and-mental-health)
+🔗 **Link to the Original Dataset**: [click here](https://www.kaggle.com/datasets/waqi786/remote-work-and-mental-health)
 
 The dataset used in this project is sourced from Kaggle. It's a synthetically generated dataset designed to simulate workplace trends related to remote work and mental health. The data does not represent real-world information and is intended solely for educational purposes, exploratory analysis. Consists of a single sheet (non-relational), containing all relevant data in one table.
 
-**Columns Description:**
+📝 **Columns Description**
 
 | **Column** | **Data type** | **Description** |
 |---|---|---|
