@@ -72,15 +72,15 @@ The dataset used in this project is sourced from Kaggle. It's a synthetically ge
 | **sleep_quality** | text | Quality of sleep (Average, Good, Poor) |
 | **Region** | text | region (Africa, Asia, South America, North America, Europe, Oceania) |
 
-  Once I familiarized myself with the dataset, let's move on to the next stage.
+Once I familiarized myself with the dataset, let's move on to the next stage.
 
-## Task 2. Data Cleaning: Preprocess the data by handling missing values, outliers, and inconsistencies to ensure quality for analysis
+## Data Cleaning: Preprocess the data by handling missing values, outliers and inconsistencies to ensure quality for analysis
 
-Link to Cleaning script: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/Cleaning.sql)
+🔗 Link to the Cleaning script: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/Cleaning.sql)
 
 Let's start with Dataset overview!
 
-First of all I have to check if everything is working and displaying correctly.
+First of all I have to check if everything is working and displaying correctly
 
 ```sql
 SELECT * 
@@ -88,7 +88,18 @@ FROM health
 LIMIT 5;
 ```
 
-Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/queries_sql/view_first_5_rows.csv)
+📊 Result: 
+
+```csv
+"employee_id","age","gender","job_role","industry","years_of_experience","work_location","hours_worked_per_week","number_of_virtual_meetings","work_life_balance_rating","stress_level","mental_health_condition","access_to_mental_health_resources","productivity_change","social_isolation_rating","satisfaction_with_remote_work","company_support_for_remote_work","physical_activity","sleep_quality","region"
+"EMP0001",32,"Non-binary","HR","Healthcare",13,"Hybrid",47,7,2,"Medium","Depression","No","Decrease",1,"Unsatisfied",1,"Weekly","Good","Europe"
+"EMP0002",40,"Female","Data Scientist","IT",3,"Remote",52,4,1,"Medium","Anxiety","No","Increase",3,"Satisfied",2,"Weekly","Good","Asia"
+"EMP0003",59,"Non-binary","Software Engineer","Education",22,"Hybrid",46,11,5,"Medium","Anxiety","No","No Change",4,"Unsatisfied",5,"None","Poor","North America"
+"EMP0004",27,"Male","Software Engineer","Finance",20,"Onsite",32,8,4,"High","Depression","Yes","Increase",3,"Unsatisfied",3,"None","Poor","Europe"
+"EMP0005",49,"Male","Sales","Consulting",32,"Onsite",35,12,2,"High","None","Yes","Decrease",3,"Unsatisfied",3,"Weekly","Average","North America"
+```
+
+[View result (.csv)](./data/queries_sql/view_first_5_rows.csv)
 
 Next, I have to do a sanity check. For example, making sure that an employee isn't 1 year old or 157 years old and so on. Let's consider the following columns: **age**, **years\_of\_experience**, **hours\_worked\_per\_week**, and **number\_of\_virtual\_meetings**.
 
@@ -105,11 +116,14 @@ SELECT
 FROM health;
 ```
 
-Result: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/data/queries_sql/sanity_check.csv)
+📊 Result: 
 
-| min_age | max_age | min_years_of_experience |	max_years_of_experience |	min_hours_worked_per_week |	max_hours_worked_per_week	| min_number_of_virtual_meetings | max_number_of_virtual_meetings |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 22 | 60 | 1 | 35 | 20 | 60 | 0 | 15 |
+```csv
+"min_age","max_age","min_years_of_experience","max_years_of_experience","min_hours_worked_per_week","max_hours_worked_per_week","min_number_of_virtual_meetings","max_number_of_virtual_meetings"
+22,60,1,35,20,60,0,15
+```
+
+[View result (.csv)](./data/queries_sql/sanity_check.csv)
 
 If I need to see what values exist in the columns I can use the following query
 
