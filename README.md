@@ -25,6 +25,8 @@ In this project I examine the impact of remote work on mental health using a syn
 
 .sql cleaning: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/Cleaning.sql)
 
+.R analysis: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/Analysis.R)
+
 .twbx project: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/DA%201.%20Mental%20Health.twbx)
 
 public tableau project: [click here](https://public.tableau.com/app/profile/maksym.yakushev/viz/DA1_MentalHealth/Dashboard)
