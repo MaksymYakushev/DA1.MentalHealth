@@ -3,3 +3,6 @@
 
 *.twbx linguist-language=XML
 *.twbx linguist-detectable=true
+
+*.R linguist-language=R
+*.R linguist-detectable=true
