@@ -260,7 +260,7 @@ Alternative hypothesis ($H_1$): the two variables are not independent (there is 
 
 If $p_{value} < \alpha$, we reject $H_0$ and conclude that the variables are associated.
 
-If $p_{value} \leq \alpha$, we fail to reject $H_0$.
+If $p_{value} \geq \alpha$, we fail to reject $H_0$.
 
 ---
 
@@ -276,7 +276,7 @@ Alternative hypothesis ($H_1$): the means of the two groups are not equal ($\mu_
 
 If $p_{value} < \alpha$, we reject $H_0$, the difference in means is statistically significant.
 
-If $p_{value} \leq \alpha$, we fail to reject $H_0$, no significant difference.
+If $p_{value} \geq \alpha$, we fail to reject $H_0$, no significant difference.
 
 ---
 
@@ -292,7 +292,7 @@ Alternative hypothesis ($H_1$): at least one group mean is different.
 
 If $p_{value} < \alpha$, we reject $H_0$, at least one group mean is significantly different.
 
-If $p_{value} \leq \alpha$, we fail to reject $H_0$, no significant difference among group means.
+If $p_{value} \geq \alpha$, we fail to reject $H_0$, no significant difference among group means.
 
 Now, let's move on to the questions that need to be addressed.
 
