@@ -244,6 +244,60 @@ WHERE
 
 ## Identifying key trends and patterns
 
+In this section, a statistical analysis of the data was conducted to identify the factors affecting employees’ mental health. We examined several key aspects: the level of burnout across different age groups, regional differences in access to mental health resources and company support, the role of remote work in shaping social isolation and productivity, as well as the impact of workload, physical activity, and sleep quality on stress, anxiety, and burnout. Various statistical methods were applied, including $\chi^2$ tests of independence, t-tests for mean comparisons, ANOVA, and logistic regression. This approach made it possible both to test hypotheses regarding the statistical significance of differences and to assess the contribution of different factors to the likelihood of burnout. We begin with the theoretical background.
+
+📝 **Chi-squared Test of Independence ($\chi^2$ test)**
+
+The $\chi^2$ test of independence is a non-parametric statistical test used to determine whether there is a significant association between two categorical variables.
+
+Null hypothesis ($H_0$): the two variables are independent (no association).
+
+Alternative hypothesis ($H_1$): the two variables are not independent (there is an association).
+
+**Decision rule:**
+
+If $p_{value} < \alpha$, we reject $H_0$ and conclude that the variables are associated.
+
+If $p_{value} \leq \alpha$, we fail to reject $H_0$.
+
+📝 **t-test (Two-Sample t-test)**
+
+The t-test is a parametric statistical test used to compare the means of two independent groups and determine whether their difference is statistically significant.
+
+Null hypothesis ($H_0$): the means of the two groups are equal ($\mu_1 = \mu_2$).
+
+Alternative hypothesis ($H_1$): the means of the two groups are not equal ($\mu_1 \neq \mu_2$) or one mean is greater/smaller (one-tailed test).
+
+**Decision rule:**
+
+If $p_{value} < \alpha$, we reject $H_0$, the difference in means is statistically significant.
+
+If $p_{value} \leq \alpha$, we fail to reject $H_0$, no significant difference.
+
+📝 **ANOVA (Analysis of Variance)**
+
+Analysis of Variance (ANOVA) is a parametric statistical test used to compare the means of three or more independent groups to determine whether at least one group mean differs significantly from the others.
+
+Null hypothesis ($H_0$): all group means are equal ($\mu_1 = \mu_2 = ... = $\mu_k$).
+
+Alternative hypothesis ($H_1$): at least one group mean is different.
+
+**Decision rule:**
+
+If $p_{value} < \alpha$, we reject $H_0$, at least one group mean is significantly different.
+
+If $p_{value} \leq \alpha$, we fail to reject $H_0$, no significant difference among group means.
+
+Now, let's move on to the questions that need to be addressed.
+
+---
+
+The complete R analysis for this project can be found here: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/Analysis.R)
+
+**Question 1.**
+
+
+
 ## Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data
 
 ## Presentation: Summarize findings and insights in a clear and concise presentation to communicate results effectively
