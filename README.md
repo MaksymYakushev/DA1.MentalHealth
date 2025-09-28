@@ -246,6 +246,8 @@ WHERE
 
 In this section, a statistical analysis of the data was conducted to identify the factors affecting employees’ mental health. We examined several key aspects: the level of burnout across different age groups, regional differences in access to mental health resources and company support, the role of remote work in shaping social isolation and productivity, as well as the impact of workload, physical activity, and sleep quality on stress, anxiety, and burnout. Various statistical methods were applied, including $\chi^2$ tests of independence, t-tests for mean comparisons, ANOVA, and logistic regression. This approach made it possible both to test hypotheses regarding the statistical significance of differences and to assess the contribution of different factors to the likelihood of burnout. We begin with the theoretical background.
 
+---
+
 📝 **Chi-squared Test of Independence ($\chi^2$ test)**
 
 The $\chi^2$ test of independence is a non-parametric statistical test used to determine whether there is a significant association between two categorical variables.
@@ -260,6 +262,8 @@ If $p_{value} < \alpha$, we reject $H_0$ and conclude that the variables are ass
 
 If $p_{value} \leq \alpha$, we fail to reject $H_0$.
 
+---
+
 📝 **t-test (Two-Sample t-test)**
 
 The t-test is a parametric statistical test used to compare the means of two independent groups and determine whether their difference is statistically significant.
@@ -273,6 +277,8 @@ Alternative hypothesis ($H_1$): the means of the two groups are not equal ($\mu_
 If $p_{value} < \alpha$, we reject $H_0$, the difference in means is statistically significant.
 
 If $p_{value} \leq \alpha$, we fail to reject $H_0$, no significant difference.
+
+---
 
 📝 **ANOVA (Analysis of Variance)**
 
@@ -294,9 +300,62 @@ Now, let's move on to the questions that need to be addressed.
 
 The complete R analysis for this project can be found here: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/Analysis.R)
 
-**Question 1.**
+First of all we can import the dataset into R and check if everything is working and also examine its structure
 
+```r
+df <- read.delim("Mental_Health_after_Tableau.csv",
+                 fileEncoding = "UTF-16LE",
+                 sep = "\t",
+                 header = TRUE,
+                 stringsAsFactors = FALSE)
 
+print(head(df))
+```
+
+**Question 1.  Analyze burnout by age group**
+
+In this analysis we investigate the prevalence of employee burnout across different age groups. We calculate both the total number of employees and the number of employees experiencing burnout in each age group. Additionally, we compute the percentage of employees with burnout to better understand which age groups are more affected. Finally, we perform a chi-squared test to examine whether burnout is statistically associated with age group
+
+```r
+burnout_by_age <- df %>%
+  group_by(Age.Group) %>%
+  summarise(
+    total = n(),
+    burnout_count = sum(Mental.Health.Condition == "Burnout"),
+    burnout_percent = round((burnout_count / total) * 100, 1)
+  ) %>%
+  arrange(Age.Group)
+
+print(burnout_by_age)
+print(table(df$Age.Group, df$Mental.Health.Condition == "Burnout"))
+
+print(chisq.test(table(df$Age.Group, df$Mental.Health.Condition == "Burnout")))
+```
+
+📊 Result:
+
+``` csv
+# A tibble: 5 × 4
+  Age.Group total burnout_count burnout_percent
+  <chr>     <int>         <int>           <dbl>
+1 18-24       411           106            25.8
+2 25-34      1255           323            25.7
+3 35-44      1250           321            25.7
+4 45-54      1319           344            26.1
+5 55+         765           186            24.3
+       
+        FALSE TRUE
+  18-24   305  106
+  25-34   932  323
+  35-44   929  321
+  45-54   975  344
+  55+     579  186
+
+        Pearson's Chi-squared test
+
+data:  table(df$Age.Group, df$Mental.Health.Condition == "Burnout")
+X-squared = 0.84876, df = 4, p-value = 0.9318
+```
 
 ## Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data
 
