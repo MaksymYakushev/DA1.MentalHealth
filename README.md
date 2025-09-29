@@ -312,7 +312,7 @@ df <- read.delim("Mental_Health_after_Tableau.csv",
 print(head(df))
 ```
 
-**Question 1.  Analyze burnout by age group**
+**Question 1. Analyze burnout by age group**
 
 In this analysis we investigate the prevalence of employee burnout across different age groups. We calculate both the total number of employees and the number of employees experiencing burnout in each age group. Additionally, we compute the percentage of employees with burnout to better understand which age groups are more affected. Finally, we perform a chi-squared test to examine whether burnout is statistically associated with age group
 
@@ -356,6 +356,164 @@ print(chisq.test(table(df$Age.Group, df$Mental.Health.Condition == "Burnout")))
 data:  table(df$Age.Group, df$Mental.Health.Condition == "Burnout")
 X-squared = 0.84876, df = 4, p-value = 0.9318
 ```
+✍🏻 **Interpretation of the results**
+
+Here $p_{value} = 0.9318$. Since $p_{value} > 0.05$, we fail to reject $H_0$. Suggesting that burnout levels are not significantly associated with age group.
+
+**Question 2.1. Analyze access to mental health resources by region**
+
+This analysis checks whether access to mental health resources differs across regions. We used a $\chi^2$-test of independence
+
+```r
+print(chisq.test(table(df$Region, df$Access.to.Mental.Health.Resources)))
+```
+
+📊 Result:
+
+``` csv
+data:  table(df$Region, df$Access.to.Mental.Health.Resources)
+X-squared = 1.1441, df = 5, p-value = 0.9501
+```
+
+✍🏻 **Interpretation of the results**
+
+Here $p_{value} = 0.9501$. Since $p_{value} > 0.05$, we fail to reject $H_0$. The result showed no significant differences, suggesting that access is similar across all regions.
+
+**Question 2.2. Analyze company support for mental health by region**
+
+This analysis checks whether company support for mental health differs across regions. We used a $\chi^2$-test of independence
+
+```r
+print(chisq.test(table(df$Region, df$Company.Support)))
+```
+
+📊 Result:
+
+``` csv
+data:  table(df$Region, df$Company.Support)
+X-squared = 14, df = 20, p-value = 0.8305
+```
+
+✍🏻 **Interpretation of the results**
+
+Here $p_{value} = 0.8305$. Since $p_{value} > 0.05$, we fail to reject $H_0$. The result showed no significant differences, suggesting that support is similar across all regions.
+
+**Question 2.3. Analyze company support for remote work by region**
+
+This analysis checks whether company support for remote work differs across regions. We used an ANOVA test
+
+```r
+print(summary(aov(Company.Support.for.Remote.Work ~ Region, data = df)))
+```
+
+📊 Result:
+
+``` csv
+              Df Sum Sq Mean Sq F value Pr(>F)
+Region         5      6   1.158   0.591  0.707
+Residuals   4994   9779   1.958    
+```
+
+✍🏻 **Interpretation of the results**
+
+Here we can see more detailed data, such as the F-value, mean squares and other statistics. The ANOVA test shows $p_{value} = 0.707$. Since $p_{value} > 0.05$, we fail to reject $H_0$. This suggests that there is no statistically significant difference in company support for remote work across all regions.
+
+**Question 3. Analyze burnout by work location**
+
+**Burnout. Remote vs Onsite**
+
+This analysis examines whether the prevalence of burnout differs between remote and onsite employees. We constructed contingency tables and applied the $\chi^2$-test of independence for both remote and onsite groups
+
+```r
+print(table(df$Work.Location == "Remote", df$Mental.Health.Condition == "Burnout"))
+print(chisq.test(table(df$Work.Location == "Remote", df$Mental.Health.Condition == "Burnout")))
+print(table(df$Work.Location == "Onsite", df$Mental.Health.Condition == "Burnout"))
+print(chisq.test(table(df$Work.Location == "Onsite", df$Mental.Health.Condition == "Burnout")))
+```
+
+📊 Result:
+
+``` csv
+        FALSE TRUE
+  FALSE  2444  842
+  TRUE   1276  438
+
+        Pearson's Chi-squared test with Yates' continuity correction
+
+data:  table(df$Work.Location == "Remote", df$Mental.Health.Condition ==     "Burnout")
+X-squared = 0.00037594, df = 1, p-value = 0.9845
+
+       
+        FALSE TRUE
+  FALSE  2525  838
+  TRUE   1195  442
+
+        Pearson's Chi-squared test with Yates' continuity correction
+
+data:  table(df$Work.Location == "Onsite", df$Mental.Health.Condition ==     "Burnout")
+X-squared = 2.3986, df = 1, p-value = 0.1214   
+```
+
+✍🏻 **Interpretation of the results**
+
+Since all p-values $p_{value} > 0.05$, we fail to reject $H_0$, suggesting that burnout levels are not significantly different between remote and onsite employees.
+
+**Social Isolation. Remote vs Onsite**
+
+This analysis evaluates whether social isolation ratings differ between remote and onsite employees. We applied a Welch Two Sample t-test to compare the mean social isolation scores between the two groups
+
+```r
+print(t.test(df$Social.Isolation.Rating[df$Work.Location == "Remote"], df$Social.Isolation.Rating[df$Work.Location == "Onsite"]))
+```
+
+📊 Result:
+
+``` csv
+        Welch Two Sample t-test
+
+data:  df$Social.Isolation.Rating[df$Work.Location == "Remote"] and df$Social.Isolation.Rating[df$Work.Location == "Onsite"]
+t = -1.0646, df = 3338.2, p-value = 0.2871
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.14587382  0.04320429
+sample estimates:
+mean of x mean of y 
+ 2.961494  3.012828 
+```
+
+✍🏻 **Interpretation of the results**
+
+Since  $p_{value} > 0.05$, we fail to reject $H_0$, indicating no statistically significant difference in social isolation between remote and onsite employees.
+
+**Question 4. Analyze stress levels by HWPW groups**
+
+This analysis investigates whether stress levels differ depending on hours worked per week (HWPW groups). We created a contingency table and applied a $\chi^2$-test of independence to assess the relationship between HWPW groups and stress levels
+
+```r
+print(table(df$HWPW.Groups, df$Stress.Level))
+print(chisq.test(table(df$HWPW.Groups, df$Stress.Level)))
+```
+
+📊 Result:
+
+``` csv
+                 FALSE TRUE
+  Full-time       1385  452
+  Overtime heavy   425  159
+  Overtime light   864  324
+  Part-time       1046  345
+
+        Pearson's Chi-squared test
+
+data:  table(df$HWPW.Groups, df$Mental.Health.Condition == "Burnout")
+X-squared = 3.9749, df = 3, p-value = 0.2642
+```
+
+✍🏻 **Interpretation of the results**
+
+Since $p_{value} > 0.05$, we fail to reject $H_0$, indicating no statistically significant association between hours worked per week and stress levels.
+
+**# Question 5. Analyze burnout by HWPW groups**
 
 ## Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data
 
