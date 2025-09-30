@@ -38,6 +38,13 @@ public tableau project: [click here](https://public.tableau.com/app/profile/maks
 - [Data Cleaning: Preprocess the data by handling missing values, outliers, and inconsistencies to ensure quality for analysis](#data-cleaning-preprocess-the-data-by-handling-missing-values-outliers-and-inconsistencies-to-ensure-quality-for-analysis)
 - [Identifying key patterns](#identifying-key-patterns)
 - [Dashboard Creation: Build interactive dashboards using Tableau to visualize key metrics and patterns in the data](#build-interactive-dashboards-using-tableau-to-visualize-key-metrics-and-patterns-in-the-data)
+  - [Introduction](#introduction)
+  - [Data Preparation](#data-preparation)
+  - [Dashboard Structure](#dashboard-structure)
+  - [Building Visualizations](#building-visualizations)
+  - [Visual Design](#visual-design)
+  - [Interactivity](#interactivity)
+  - [Conclusion](conclusion)
 - [Presentation: Summarize findings and insights in a clear and concise presentation to communicate results effectively](#presentation-summarize-findings-and-insights-in-a-clear-and-concise-presentation-to-communicate-results-effectively)
 - [Conclusion](conclusion)
 
@@ -702,6 +709,20 @@ At the same time, it is important to emphasize that despite the absence of signi
 The complete Tableau workbook for this project can be found here: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/DA%201.%20Mental%20Health.twbx)
 
 The Tableau Public Project can be found here: [click here](https://public.tableau.com/app/profile/maksym.yakushev/viz/DA1_MentalHealth/Dashboard)
+
+### Introduction
+
+### Data Preparation
+
+### Dashboard Structure
+
+### Building Visualizations
+
+### Visual Design
+
+### Interactivity
+
+### Conclusion
 
 
 
