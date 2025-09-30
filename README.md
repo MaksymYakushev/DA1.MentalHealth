@@ -37,7 +37,7 @@ public tableau project: [click here](https://public.tableau.com/app/profile/maks
 - [Data Familiarization: Understand the structure, variables, and content of the dataset](#data-familiarization-understand-the-structure-variables-and-content-of-the-dataset)
 - [Data Cleaning: Preprocess the data by handling missing values, outliers, and inconsistencies to ensure quality for analysis](#data-cleaning-preprocess-the-data-by-handling-missing-values-outliers-and-inconsistencies-to-ensure-quality-for-analysis)
 - [Identifying key patterns](#identifying-key-patterns)
-- [Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data](#dashboard-creation-build-interactive-dashboards-using-tableau-to-visualize-key-trends-and-patterns-in-the-data)
+- [Dashboard Creation: Build interactive dashboards using Tableau to visualize key metrics and patterns in the data](#build-interactive-dashboards-using-tableau-to-visualize-key-metrics-and-patterns-in-the-data)
 - [Presentation: Summarize findings and insights in a clear and concise presentation to communicate results effectively](#presentation-summarize-findings-and-insights-in-a-clear-and-concise-presentation-to-communicate-results-effectively)
 - [Conclusion](conclusion)
 
@@ -697,8 +697,13 @@ In the analysis a wide range of statistical methods ($\chi^2$ tests, t-tests, AN
 
 At the same time, it is important to emphasize that despite the absence of significant results, conducting such an analysis was necessary. Even though the dataset is generated, hypothesis testing demonstrates the correct application of statistical methods, shows how conclusions are drawn, and confirms whether or not relationships exist in the data. Thus, we obtained a complete picture and ensured that no significant patterns were present in the provided dataset.
 
+## Dashboard Creation: Build interactive dashboards using Tableau to visualize key metrics and patterns in the data
 
-## Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data
+The complete Tableau workbook for this project can be found here: [click here](https://github.com/MaksymYakushev/DA1.MentalHealth/blob/main/DA%201.%20Mental%20Health.twbx)
+
+The Tableau Public Project can be found here: [click here](https://public.tableau.com/app/profile/maksym.yakushev/viz/DA1_MentalHealth/Dashboard)
+
+
 
 ## Presentation: Summarize findings and insights in a clear and concise presentation to communicate results effectively
 
