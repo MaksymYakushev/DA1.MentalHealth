@@ -38,7 +38,7 @@ public tableau project: [click here](https://public.tableau.com/app/profile/maks
 - [Data Cleaning: Preprocess the data by handling missing values, outliers, and inconsistencies to ensure quality for analysis](#data-cleaning-preprocess-the-data-by-handling-missing-values-outliers-and-inconsistencies-to-ensure-quality-for-analysis)
 - [Identifying key patterns](#identifying-key-patterns)
 - [Dashboard Creation: Build interactive dashboards using Tableau to visualize key metrics and patterns in the data](#build-interactive-dashboards-using-tableau-to-visualize-key-metrics-and-patterns-in-the-data)
-  - [Introduction](#introduction)
+  - [Intro](#intro)
   - [Data Preparation](#data-preparation)
   - [Dashboard Structure](#dashboard-structure)
   - [Building Visualizations](#building-visualizations)
@@ -710,7 +710,7 @@ The complete Tableau workbook for this project can be found here: [click here](h
 
 The Tableau Public Project can be found here: [click here](https://public.tableau.com/app/profile/maksym.yakushev/viz/DA1_MentalHealth/Dashboard)
 
-### Introduction
+### Intro
 
 ### Data Preparation
 
