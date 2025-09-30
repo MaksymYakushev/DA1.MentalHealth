@@ -36,7 +36,7 @@ public tableau project: [click here](https://public.tableau.com/app/profile/maks
 ## Table of Contents
 - [Data Familiarization: Understand the structure, variables, and content of the dataset](#data-familiarization-understand-the-structure-variables-and-content-of-the-dataset)
 - [Data Cleaning: Preprocess the data by handling missing values, outliers, and inconsistencies to ensure quality for analysis](#data-cleaning-preprocess-the-data-by-handling-missing-values-outliers-and-inconsistencies-to-ensure-quality-for-analysis)
-- [Identifying key trends and patterns](#identifying-key-trends-and-patterns)
+- [Identifying key patterns](#identifying-key-patterns)
 - [Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data](#dashboard-creation-build-interactive-dashboards-using-tableau-to-visualize-key-trends-and-patterns-in-the-data)
 - [Presentation: Summarize findings and insights in a clear and concise presentation to communicate results effectively](#presentation-summarize-findings-and-insights-in-a-clear-and-concise-presentation-to-communicate-results-effectively)
 - [Conclusion](conclusion)
@@ -242,7 +242,7 @@ WHERE
 - It has been found to be clean, consistent and free of anomalies or duplicates;
 - I can proceed to the next step.
 
-## Identifying key trends and patterns
+## Identifying key patterns
 
 In this section, a statistical analysis of the data was conducted to identify the factors affecting employees’ mental health. We examined several key aspects: the level of burnout across different age groups, regional differences in access to mental health resources and company support, the role of remote work in shaping social isolation and productivity, as well as the impact of workload, physical activity, and sleep quality on stress, anxiety, and burnout. Various statistical methods were applied, including $\chi^2$ tests of independence, t-tests for mean comparisons, ANOVA, and logistic regression. This approach made it possible both to test hypotheses regarding the statistical significance of differences and to assess the contribution of different factors to the likelihood of burnout. We begin with the theoretical background.
 
@@ -312,6 +312,8 @@ df <- read.delim("Mental_Health_after_Tableau.csv",
 print(head(df))
 ```
 
+---
+
 **Question 1. Analyze burnout by age group**
 
 In this analysis we investigate the prevalence of employee burnout across different age groups. We calculate both the total number of employees and the number of employees experiencing burnout in each age group. Additionally, we compute the percentage of employees with burnout to better understand which age groups are more affected. Finally, we perform a chi-squared test to examine whether burnout is statistically associated with age group
@@ -359,6 +361,8 @@ X-squared = 0.84876, df = 4, p-value = 0.9318
 ✍🏻 **Interpretation of the results**
 
 Here $p_{value} = 0.9318$. Since $p_{value} > 0.05$, we fail to reject $H_0$. Suggesting that burnout levels are not significantly associated with age group.
+
+---
 
 **Question 2.1. Analyze access to mental health resources by region**
 
@@ -417,6 +421,8 @@ Residuals   4994   9779   1.958
 ✍🏻 **Interpretation of the results**
 
 Here we can see more detailed data, such as the F-value, mean squares and other statistics. The ANOVA test shows $p_{value} = 0.707$. Since $p_{value} > 0.05$, we fail to reject $H_0$. This suggests that there is no statistically significant difference in company support for remote work across all regions.
+
+---
 
 **Question 3. Analyze burnout by work location**
 
@@ -485,6 +491,8 @@ mean of x mean of y
 
 Since  $p_{value} > 0.05$, we fail to reject $H_0$, indicating no statistically significant difference in social isolation between remote and onsite employees.
 
+---
+
 **Question 4. Analyze stress levels by HWPW groups**
 
 This analysis investigates whether stress levels differ depending on hours worked per week (HWPW groups). We created a contingency table and applied a $\chi^2$-test of independence to assess the relationship between HWPW groups and stress levels
@@ -492,6 +500,36 @@ This analysis investigates whether stress levels differ depending on hours worke
 ```r
 print(table(df$HWPW.Groups, df$Stress.Level))
 print(chisq.test(table(df$HWPW.Groups, df$Stress.Level)))
+```
+
+📊 Result:
+
+``` csv
+                 High Low Medium
+  Full-time       623 619    595
+  Overtime heavy  211 184    189
+  Overtime light  398 378    412
+  Part-time       454 464    473
+
+        Pearson's Chi-squared test
+
+data:  table(df$HWPW.Groups, df$Stress.Level)
+X-squared = 4.2201, df = 6, p-value = 0.6469
+```
+
+✍🏻 **Interpretation of the results**
+
+Since $p_{value} > 0.05$, we fail to reject $H_0$, indicating no statistically significant association between hours worked per week and stress levels.
+
+---
+
+**Question 5. Analyze burnout by HWPW groups**
+
+This analysis examines whether burnout levels differ depending on hours worked per week (HWPW groups). We constructed a contingency table and applied a $\chi^2$-test of independence
+
+```r
+print(table(df$HWPW.Groups, df$Mental.Health.Condition == "Burnout"))
+print(chisq.test(table(df$HWPW.Groups, df$Mental.Health.Condition == "Burnout")))
 ```
 
 📊 Result:
@@ -508,12 +546,157 @@ print(chisq.test(table(df$HWPW.Groups, df$Stress.Level)))
 data:  table(df$HWPW.Groups, df$Mental.Health.Condition == "Burnout")
 X-squared = 3.9749, df = 3, p-value = 0.2642
 ```
+✍🏻 **Interpretation of the results**
+
+Since $p_{value} > 0.05$, we fail to reject $H_0$. This indicates that there is no statistically significant association between HWPW groups and burnout levels.
+
+---
+
+**Question 6. Analyze physical activity by mental health condition**
+
+This analysis investigates whether there is a relationship between physical activity and the presence of mental health conditions such as depression or anxiety. A $\chi^2$-test of independence was performed on the contingency table
+
+```r
+print(table(df$Physical.Activity, df$Mental.Health.Condition %in% c("Depression", "Anxiety")))
+print(chisq.test(table(df$Physical.Activity, df$Mental.Health.Condition %in% c("Depression", "Anxiety"))))
+```
+
+📊 Result:
+
+``` csv
+         FALSE TRUE
+  Daily    800  816
+  None     828  801
+  Weekly   848  907
+
+        Pearson's Chi-squared test
+
+data:  table(df$Physical.Activity, df$Mental.Health.Condition %in% c("Depression",     "Anxiety"))
+X-squared = 2.1288, df = 2, p-value = 0.3449
+```
 
 ✍🏻 **Interpretation of the results**
 
-Since $p_{value} > 0.05$, we fail to reject $H_0$, indicating no statistically significant association between hours worked per week and stress levels.
+Since $p_{value} > 0.05$, we fail to reject $H_0$. This suggests that there is no statistically significant association between physical activity and the likelihood of reporting depression or anxiety.
 
-**# Question 5. Analyze burnout by HWPW groups**
+---
+
+**Question 7. Analyze productivity change by work location**
+
+This analysis investigates whether remote and onsite employees differ in terms of productivity improvement. A $\chi^2$-test of independence was applied to the contingency table
+
+```r
+print(table(df$Work.Location == "Remote", df$Productivity.Change == "Increase"))
+print(chisq.test(table(df$Work.Location == "Remote", df$Productivity.Change == "Increase")))
+```
+
+📊 Result:
+
+``` csv
+        FALSE TRUE
+  FALSE  2258 1028
+  TRUE   1156  558
+
+        Pearson's Chi-squared test with Yates' continuity correction
+
+data:  table(df$Work.Location == "Remote", df$Productivity.Change ==     "Increase")
+X-squared = 0.78276, df = 1, p-value = 0.3763
+```
+✍🏻 **Interpretation of the results**
+
+Since $p_{value} > 0.05$, we fail to reject $H_0$. This indicates that there is no statistically significant relationship between work location and productivity increase.
+
+---
+
+**Question 8.  Analyze productivity change by company support for remote work**
+
+This analysis examines whether the level of company support for remote work is associated with employees reporting an increase in productivity. A $\chi^2$-test of independence was performed
+
+```r
+print(table(df$Productivity.Change == "Increase", df$Company.Support.for.Remote.Work))
+print(chisq.test(table(df$Productivity.Change == "Increase", df$Company.Support.for.Remote.Work)))
+```
+
+📊 Result:
+
+``` csv
+          1   2   3   4   5
+  FALSE 664 663 723 689 675
+  TRUE  303 322 354 295 312
+
+        Pearson's Chi-squared test
+
+data:  table(df$Productivity.Change == "Increase", df$Company.Support.for.Remote.Work)
+X-squared = 2.5328, df = 4, p-value = 0.6388
+```
+
+✍🏻 **Interpretation of the results**
+
+Since $p_{value} > 0.05$, we fail to reject $H_0$. This suggests that company support for remote work does not have a statistically significant effect on whether employees report higher productivity.
+
+---
+
+**Question 9. Analyze sleep quality by mental health condition**
+
+To test whether sleep quality, along with other factors influences the likelihood of burnout we applied a logistic regression model. The dependent variable was whether an employee reported burnout and the predictors included age group, work location, working hours (HWPW), physical activity and sleep quality.
+
+```r
+burnout_model <- glm(I(Mental.Health.Condition == "Burnout") ~ Age.Group + Work.Location + HWPW.Groups + Physical.Activity + Sleep.Quality, data = df, family = binomial)
+print(summary(burnout_model))
+```
+
+📊 Result:
+
+``` csv
+glm(formula = I(Mental.Health.Condition == "Burnout") ~ Age.Group + 
+    Work.Location + HWPW.Groups + Physical.Activity + Sleep.Quality, 
+    family = binomial, data = df)
+
+Coefficients:
+                           Estimate Std. Error z value Pr(>|z|)    
+(Intercept)               -1.248860   0.146983  -8.497   <2e-16 ***
+Age.Group25-34            -0.010836   0.130127  -0.083   0.9336    
+Age.Group35-44            -0.010817   0.130214  -0.083   0.9338    
+Age.Group45-54             0.009394   0.129180   0.073   0.9420    
+Age.Group55+              -0.085198   0.141031  -0.604   0.5458    
+Work.LocationOnsite        0.146746   0.080182   1.830   0.0672 .  
+Work.LocationRemote        0.073196   0.079939   0.916   0.3598    
+HWPW.GroupsOvertime heavy  0.137655   0.107727   1.278   0.2013    
+HWPW.GroupsOvertime light  0.145571   0.084921   1.714   0.0865 .  
+HWPW.GroupsPart-time       0.013859   0.082536   0.168   0.8666    
+Physical.ActivityNone      0.054542   0.080563   0.677   0.4984    
+Physical.ActivityWeekly    0.024662   0.079464   0.310   0.7563    
+Sleep.QualityGood          0.036980   0.080180   0.461   0.6446    
+Sleep.QualityPoor          0.085794   0.079788   1.075   0.2822    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 5688.3  on 4999  degrees of freedom
+Residual deviance: 5678.5  on 4986  degrees of freedom
+AIC: 5706.5
+
+Number of Fisher Scoring iterations: 4
+```
+
+✍🏻 **Interpretation of the results**
+
+- None of the predictors including sleep quality showed statistically significant effects at the 5% level.
+- The closest to significance were Work Location (Onsite, p = 0.067) and HWPW Groups (Overtime light, p = 0.087) but both remain above the conventional threshold of 0.05.
+- Sleep quality (Good vs. Poor) had p-values of 0.645 and 0.282 suggesting no significant relationship with burnout.
+- Model fit: residual deviance = 5678.5 (vs. null deviance = 5688.3), AIC = 5706.5 → the model explains very little variation.
+
+Sleep quality, together with other predictors, does not significantly explain burnout risk in this dataset. However, there are weak signals for work location and overtime work that might warrant further investigation.
+
+---
+
+📝 **Conclusion**
+
+In the analysis a wide range of statistical methods ($\chi^2$ tests, t-tests, ANOVA, logistic regression) were applied to assess the impact of age, region, work format, working hours, physical activity, and sleep on burnout, stress, isolation, and productivity. All results showed $p_{value} > 0.05$, meaning no statistically significant differences were found. This indicates that within the given dataset, the studied factors do not have a strong or obvious effect on mental health and productivity.
+
+At the same time, it is important to emphasize that despite the absence of significant results, conducting such an analysis was necessary. Even though the dataset is generated, hypothesis testing demonstrates the correct application of statistical methods, shows how conclusions are drawn, and confirms whether or not relationships exist in the data. Thus, we obtained a complete picture and ensured that no significant patterns were present in the provided dataset.
+
 
 ## Dashboard Creation: Build interactive dashboards using Tableau to visualize key trends and patterns in the data
 
